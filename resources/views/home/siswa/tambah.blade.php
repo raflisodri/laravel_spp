@@ -1,5 +1,5 @@
 @section('content')
-@section('title','FORM TAMBAH DATA SISWA')
+@section('title','EDIT SISWA')
 @extends('master')  
 <br>
 <br>
@@ -30,7 +30,7 @@
 
                                   <div class="form-group">
                                     <label>Kelas</label>
-                                    <select name="kelas" class="form-control" id="">
+                                    <select name="id_kelas" class="form-control" id="">
                                       @foreach ($kelas as $kelas)
                                           <option  value="{{$kelas->id}}">{{$kelas->id}} - {{$kelas->nama_kelas}}</option>
                                       @endforeach
@@ -44,8 +44,11 @@
                                     <label>No Telp</label>
                                     <input type="number" class="form-control" name="no_telp" id="" placeholder="Masukan No Telp">
                                   </div>
+                                  
+
                                   <button type="submit" class="btn btn-primary">simpan</button>
-                                  <button type="reset" class="btn btn-secondary">reset</button>
+                                  <button type="reset" class="btn btn-danger">reset</button>
+                                  <a href="/siswa"class="btn btn-secondary">kembali</a>
                             </form>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 @extends('master')
+@section('title','DATA USER')
 @section('content')
 
 <br>

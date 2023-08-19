@@ -13,6 +13,6 @@ class Kelas extends Model
 
     public function kelas()
     {
-        return $this->hasMany(Kelas::class,'kelas','id');
+        return $this->hasMany(Kelas::class,'id_kelas','id');
     }
 }

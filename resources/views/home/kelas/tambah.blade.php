@@ -1,4 +1,5 @@
 @extends('master')
+@section('title','TAMBAH KELAS')
 @section('content')
 <br>
 <br>
@@ -23,7 +24,8 @@
                                     <input type="text" class="form-control" name="kompetensi_keahlian" id="" placeholder="Masukan kompetensi keahlian">
                                   </div>
                                   <button type="submit" class="btn btn-primary">simpan</button>
-                                  <button type="reset" class="btn btn-secondary">reset</button>
+                                  <button type="reset" class="btn btn-danger">reset</button>
+                                  <a href="/kelas"class="btn btn-secondary">kembali</a>
                             </form>
                         </div>
                     </div>

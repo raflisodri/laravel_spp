@@ -20,4 +20,8 @@ class Transaksi extends Model
     {
         return $this->belongsTo(user::class,'id_petugas','id');
     }
+    public function spp()
+    {
+        return $this->belongsTo(Spp::class,'id_spp','id');
+    }
 }

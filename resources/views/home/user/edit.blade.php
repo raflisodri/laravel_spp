@@ -1,4 +1,5 @@
 @extends('master')
+@section('title','EDIT USER')
 @section('content')
 <br>
 <br>
@@ -26,8 +27,10 @@
                                     <label>password</label>
                                     <input type="text" class="form-control" name="password" id="" placeholder="Masukan password" value="{{$user->password}}">
                                   </div>
+
                                   <button type="submit" class="btn btn-primary">simpan</button>
-                                  <button type="reset" class="btn btn-secondary">reset</button>
+                                  <button type="reset" class="btn btn-danger">reset</button>
+                                  <a href="/user"class="btn btn-secondary">kembali</a>
                             </form>
                         </div>
                     </div>

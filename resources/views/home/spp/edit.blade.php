@@ -1,4 +1,5 @@
 @extends('master')
+@section('title','EDIT SPP')
 @section('content')
 <br>
 <br>
@@ -26,8 +27,11 @@
                                     <label>Nominal</label>
                                     <input type="number" class="form-control" name="nominal" id="" placeholder="Masukan nominal" value="{{$spp->nominal}}">
                                   </div>
+                                  
+
                                   <button type="submit" class="btn btn-primary">simpan</button>
-                                  <button type="reset" class="btn btn-secondary">reset</button>
+                                  <button type="reset" class="btn btn-danger">reset</button>
+                                  <a href="/spp"class="btn btn-secondary">kembali</a>
                             </form>
                         </div>
                     </div>

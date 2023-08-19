@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
+use App\Models\Spp;
+use App\Models\Siswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -15,7 +18,10 @@ class TransaksiController extends Controller
     public function index()
     {
         $transaksi = Transaksi::all();
-        return view('home.transaksi.index',compact(['transaksi']));
+        $spp = Spp::all();
+        $user = User::all();
+        $siswa = Siswa::all();
+        return view('home.transaksi.index',compact(['transaksi','spp','siswa','user']));
     }
 
     /**
@@ -26,7 +32,10 @@ class TransaksiController extends Controller
     public function create()
     {
         $transaksi = Transaksi::all();
-        return view('home.transaksi.tambah');
+        $spp = Spp::all();
+        $user = User::all();
+        $siswa = Siswa::all();
+        return view('home.transaksi.tambah',compact(['transaksi','spp','siswa','user']));
     }
 
     /**
@@ -44,7 +53,7 @@ class TransaksiController extends Controller
             'id_spp'=>$request->id_spp,
             'jumlah_bayar'=>$request->jumlah_bayar,
             'keterangan'=>$request->keterangan,
-            'id_petugas'=>$request->id_petugas,
+            'id_petugas'=>Auth()->User()->id,
             
             $request->except(['_token']),
         ]);
@@ -60,7 +69,10 @@ class TransaksiController extends Controller
     public function show($id_transaksi)
     {
         $transaksi = Transaksi::find($id_transaksi);
-        return view('home.transaksi.edit',compact(['transaksi']));
+        $spp = Spp::all();
+        $user = User::all();
+        $siswa = Siswa::all();
+        return view('home.transaksi.edit',compact(['transaksi','spp','siswa','user']));
     }
 
     /**
@@ -80,13 +92,16 @@ class TransaksiController extends Controller
     public function update(Request $request, $id_transaksi)
     {
         $transaksi = Transaksi::find($id_transaksi);
+        $spp = Spp::all();
+        $user = User::all();
+        $siswa = Siswa::all();
         $transaksi->update([
             'nis'=>$request->nis,
             'tanggal_bayar'=>$request->tanggal_bayar,
             'id_spp'=>$request->id_spp,
             'jumlah_bayar'=>$request->jumlah_bayar,
             'keterangan'=>$request->keterangan,
-            'id_petugas'=>$request->id_petugas,
+            'id_petugas'=>Auth()->User()->id,
             
             $request->except(['_token']),
         ]);
@@ -105,4 +120,23 @@ class TransaksiController extends Controller
         $transaksi->delete();
         return redirect('/transaksi');
     }
+
+    public function cetak()
+    {
+        $transaksi = Transaksi::all();
+        $spp = Spp::all();
+        $siswa = Siswa::all();
+        $user = User::all();
+        return view('home.transaksi.cetak',compact('transaksi','spp','siswa','user'));
+    }
+
+    public function struk($id_transaksi)
+    {
+        $transaksi = Transaksi::find($id_transaksi);
+        $spp = Spp::all();
+        $siswa = Siswa::all();
+        $user = User::all();
+        return view('home.transaksi.struk',compact('transaksi','spp','siswa','user'));
+    }
+
 }

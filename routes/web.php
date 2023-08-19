@@ -7,8 +7,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\SppController;
-use App\Models\Kelas;
-use App\Models\Transaksi;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +63,6 @@ Route::post('transaksi/simpan', [TransaksiController::class, 'store']);
 Route::get('transaksi/edit/{id_transaksi}', [TransaksiController::class, 'show']);
 Route::post('transaksi/update/{id_transaksi}', [TransaksiController::class, 'update']);
 Route::get('transaksi/delete/{id_transaksi}', [TransaksiController::class, 'destroy']);
+
+Route::get('transaksi/cetak', [TransaksiController::class, 'cetak']);
+Route::get('transaksi/struk/{id_transaksi}', [TransaksiController::class, 'struk']);

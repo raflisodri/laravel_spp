@@ -13,13 +13,12 @@
                            <a href="siswa/tambah" class="btn btn-info">Tambah</a> 
                         </div>
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table" id="example">
                                 <thead>
                                     <tr>
                                         <th>Nis</th>
                                         <th>Nama</th>
                                         <th>Kelas</th>
-                                        <th>Alamat</th>
                                         <th>No Telp</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -30,8 +29,7 @@
                                     <tr>
                                         <td>{{$k->nis}}</td>
                                         <td>{{$k->nama}}</td>
-                                        <td>{{$k->kelas}} - {{$k->kelas->nama_kelas}}<td>
-                                        <td>{{$k->alamat}}</td>
+                                        <td>{{$k->id_kelas}} - {{$k->kelas->nama_kelas}}</td>
                                         <td>{{$k->no_telp}}</td>
                                         <td>
                                             <a href="/siswa/edit/{{$k->nis}}" class="btn btn-warning">edit</a>

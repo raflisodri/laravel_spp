@@ -44,7 +44,7 @@ class SiswaController extends Controller
         Siswa::create([
             'nis'=>$request->nis,
             'nama'=>$request->nama,
-            'kelas'=>$request->kelas,
+            'id_kelas'=>$request->id_kelas,
             'alamat'=>$request->alamat,
             'no_telp'=>$request->no_telp,
             
@@ -62,7 +62,8 @@ class SiswaController extends Controller
     public function show($nis)
     {
         $siswa = Siswa::find($nis);
-        return view('home.siswa.edit',compact(['siswa']));
+        $kelas =Kelas::all();
+        return view('home.siswa.edit',compact(['siswa','kelas']));
     }
 
     /**
@@ -82,9 +83,10 @@ class SiswaController extends Controller
     public function update(Request $request, $nis)
     {
         $siswa = Siswa::find($nis);
+        $kelas =Kelas::all();
         $siswa->update([
             'nama'=>$request->nama,
-            'kelas'=>$request->kelas,
+            'id_kelas'=>$request->id_kelas,
             'alamat'=>$request->alamat,
             'no_telp'=>$request->no_telp,
             
