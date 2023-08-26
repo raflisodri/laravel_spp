@@ -29,6 +29,8 @@ Route::get('/dashboard', function () {
 });
 
 
+Route::get('user/change-password', [UserController::class, 'changePassword'])->name('changePassword');
+Route::post('user/change-password', [UserController::class, 'changePasswordSave'])->name('postChangePassword');
 Route::get('user', [UserController::class, 'index']);
 Route::get('user/tambah', [UserController::class, 'create']);
 Route::post('user/simpan', [UserController::class, 'store']);

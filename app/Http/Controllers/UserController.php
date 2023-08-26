@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -91,4 +94,38 @@ class UserController extends Controller
         $user->delete();
         return redirect('/user');
     }
+
+    
+        public function changePassword(Request $request)
+        {
+            return view('home.user.change-password');
+        }
+     
+        public function changePasswordSave(Request $request)
+        {
+            
+            $this->validate($request, [
+                'current_password' => 'required|string',
+                'new_password' => 'required|confirmed|min:8|string'
+            ]);
+            $auth = Auth::user();
+     
+            if (!Hash::check($request->get('current_password'), $auth->password)) 
+            {
+                return back()->with('error', "Current Password is Invalid");
+            }
+     
+            if (strcmp($request->get('current_password'), $request->new_password) == 0) 
+            {
+                return redirect()->back()->with("error", "New Password cannot be same as your current password.");
+            }
+     
+            $user =  User::find($auth->id);
+            $user->password =  Hash::make($request->new_password);
+            $user->save();
+          
+            $user = User::all();
+            return view('home.user.index',compact(['user']));
+        }
+
 }

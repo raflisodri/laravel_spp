@@ -4,7 +4,7 @@
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
       <li class="nav-item">
-        <a href="/dashboard" class="nav-link">
+        <a href="//dashboard" class="nav-link">
           <i class="nav-icon fas fa-home"></i>
           <p>
             Dashboard
@@ -12,7 +12,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="/#" class="nav-link">
           <i class="nav-icon fas fa-table"></i>
           <p>
             Menu Utama
@@ -21,31 +21,31 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="user" class="nav-link">
+            <a href="/user" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Kelola Data User</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="kelas" class="nav-link">
+            <a href="/kelas" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Kelola Data Kelas</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="spp" class="nav-link">
+            <a href="/spp" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Kelola Data Spp</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="siswa" class="nav-link">
+            <a href="/siswa" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Kelola Data Siswa</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="transaksi" class="nav-link">
+            <a href="/transaksi" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Kelola Data Transaksi</p>
             </a>
@@ -53,7 +53,7 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="/#" class="nav-link">
           <i class="nav-icon fas fa-search"></i>
           <p>
             Setting
@@ -62,13 +62,13 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/#" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Profil</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="logout" class="nav-link">
+            <a href="/logout" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Logout</p>
             </a>

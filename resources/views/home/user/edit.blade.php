@@ -23,10 +23,6 @@
                                     <label>Username</label>
                                     <input type="text" class="form-control" name="username" id="" placeholder="Masukan username" value="{{$user->username}}">
                                   </div>
-                                  <div class="form-group">
-                                    <label>password</label>
-                                    <input type="text" class="form-control" name="password" id="" placeholder="Masukan password" value="{{$user->password}}">
-                                  </div>
 
                                   <button type="submit" class="btn btn-primary">simpan</button>
                                   <button type="reset" class="btn btn-danger">reset</button>

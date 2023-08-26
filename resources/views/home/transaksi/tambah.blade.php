@@ -17,7 +17,7 @@
                                 @csrf
                                 <div class="form-group">
                                   <label>Id Transaksi</label>
-                                  <input type="text" class="form-control" name="id_transaksi" id="" placeholder="Masukan id transaksi">
+                                  <input type="number" class="form-control" name="id_transaksi" id="" placeholder="Masukan id transaksi">
                                 </div>
                                   <div class="form-group">
                                     <label>Nama/Nis</label>

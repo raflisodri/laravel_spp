@@ -11,7 +11,8 @@
                     <div class="card">
                         <div class="card-header">
                            <h3>TAMPIL DATA USER</h3>
-                           <a href="user/tambah" class="btn btn-info">Tambah</a> 
+                           <a href="user/tambah" class="btn btn-info">Tambah</a>
+                           <a href="user/change-password"  class="btn btn-warning">Manage password</a>
                         </div>
                         <div class="card-body">
                             <table class="table" id="example">

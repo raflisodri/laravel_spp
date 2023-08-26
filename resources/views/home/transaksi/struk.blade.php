@@ -27,12 +27,12 @@
         <tr>
             <td> <b>NAMA</b> </td>
             <td align="right">:</td>
-            <td>{{ $transaksi->siswa->nama }}</td>
+            <td>{{ $transaksi->Siswa->nama }}</td>
         </tr>
         <tr>
             <td> <b>SPP</b> </td>
             <td align="right">:</td>
-            <td>{{ $transaksi->id_spp }}</td>
+            <td>{{ $transaksi->id_spp }} - {{ $transaksi->Spp->keterangan }}</td>
         </tr>
         <tr>
             <td> <b>total</b></td>
