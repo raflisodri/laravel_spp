@@ -73,7 +73,13 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>TRANSAKSI</h3>
+                <h3>
+                  @if($total_minggu->total_price == null)
+                  0
+                  @else
+                  {{$total_minggu->total_price}}
+                  @endif
+                </h3>
 
                 <p>Unique Visitors</p>
               </div>
@@ -87,7 +93,6 @@
         </div>
     </section>
 
-
     <section class="content">
     <div class="row">
         <div class="col-lg-12">
@@ -96,57 +101,36 @@
                     <h3>Sample Table</h3>
                 </div>
                 <div class="card-body">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th style="width: 10px">#</th>
-                      <th>Task</th>
-                      <th>Progress</th>
-                      <th style="width: 40px">Label</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-danger">55%</span></td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
-                      <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-warning">70%</span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-primary">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-success">90%</span></td>
-                    </tr>
-                  </tbody>
+                  <table class="table" id="example">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nis-Nama</th>
+                            <th>Tanggal bayar</th>
+                            <th>Spp</th>
+                            <th>Jumlah </th>
+                            <th>Keterangan</th>
+                            <th>id petugas</th>
+                    
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                            @foreach ($transaksi as $k)
+                                
+                                    <tr>
+                                        <td>{{$k->id_transaksi}}</td>
+                                        <td>{{$k->nis}} - {{$k->siswa->nama}}</td>
+                                        <td>{{$k->tanggal_bayar}}</td>
+                                        <td>{{$k->id_spp}} - {{$k->spp->keterangan}}</td>
+                                        <td>{{$k->jumlah_bayar}}</td>
+                                        <td>{{$k->keterangan}}</td>
+                                        <td>{{$k->id_petugas}} - {{$k->user->name}}</td> 
+                                      
+                                    </tr>
+                              
+                                @endforeach
+                              </tbody>
                 </table>
                 </div>
             </div>
