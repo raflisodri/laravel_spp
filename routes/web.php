@@ -7,7 +7,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\SppController;
-
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +19,16 @@ use App\Http\Controllers\SppController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::get('/', [LoginController::class,'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/PostLogin', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 
+
+Route::get('/dashboard', [DashboardController::class,'index']);
 
 Route::get('user/change-password', [UserController::class, 'changePassword'])->name('changePassword');
 Route::post('user/change-password', [UserController::class, 'changePasswordSave'])->name('postChangePassword');

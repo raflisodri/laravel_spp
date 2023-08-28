@@ -39,6 +39,7 @@
                                   <div class="form-group">
                                     <label>SPP</label>
                                     <select name="id_spp" class="form-control" id="">
+                                      <option value="{{$transaksi->id}}" disabled selected>Pilih Jenis Bayar</option>
                                       @foreach ($spp as $spp)
                                           <option  value="{{$spp->id}}">{{$spp->id}} - {{$spp->keterangan}}</option>
                                       @endforeach

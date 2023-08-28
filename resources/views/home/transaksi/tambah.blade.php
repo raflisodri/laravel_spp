@@ -34,7 +34,8 @@
 
                                   <div class="form-group">
                                     <label>Spp</label>
-                                    <select name="id_spp" class="form-control" id="">
+                                    <select name="id_spp" class="form-control" id="spp" onchange="change({{$spp}} , this)">
+                                      <option value="0" disabled selected>Pilih Jenis Bayar</option>
                                       @foreach ($spp as $spp)
                                           <option  value="{{$spp->id}}">{{$spp->id}} - {{$spp->keterangan}}</option>
                                       @endforeach
@@ -42,7 +43,7 @@
 
                                   <div class="form-group">
                                     <label>Jumlah Bayar</label>
-                                    <input type="number" class="form-control" name="jumlah_bayar" id="" placeholder="Masukan Jumlah Bayar">
+                                    <input type="number" class="form-control" name="jumlah_bayar" id="jumlah" placeholder="Masukan Jumlah Bayar">
                                   </div>
                                   <div class="form-group">
                                     <label>keterangan</label>

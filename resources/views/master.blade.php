@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="{{asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('assets/plugins/summernote/summernote-bs4.min.css')}}">
-
+  <!--data table-->
   <link rel="stylesheet" href="{{asset('datatable/dataTables.bootstrap4.min.css')}}">
 
 </head>
@@ -99,6 +99,23 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<script>
+  function change(...a){
+    let e = document.getElementById('spp');
+    let jmlh =  document.getElementById('jumlah');
+    let value = e.options[e.selectedIndex].value;
+    let text =  e.options[e.selectedIndex].text;
+
+    for (let aoo of a[0]){
+      if(aoo.id.toString() == value){
+        console.log(jmlh)
+        jmlh.value = aoo.nominal;
+      }
+    }
+  }
+
+</script>
+
 <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
